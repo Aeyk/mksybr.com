@@ -1,0 +1,93 @@
+
+# -*- mode: org; -*-
+#+TITLE: Randomly Generated Rainbow
+#+HTML_HEAD: <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+#+OPTIONS: toc:1
+
+A single LED that flashes on and off, is cool and all, but a rainbow is even cooler. If you haven't seen the previous post, check it out.
+
+** Required Hardware
+- 1X ARDUINO UNO (+ PROGRAMMING ACCESSORIES)
+- 3X RED RED BROWN RESISTORS (22K?)
+
+** Assembly
+#+BEGIN_SRC plantum
+DPIO.6 -> RESISTOR_A -> LED_3 -+
+DPIO.5 -> RESISTOR_B -> LED_2 -+ –----
+DPIO.3 -> RESISTOR_C -> LED_1 -+   ,'
+                                   |
+                        LED_GND <--+
+#+END_SRC
+
+
+** uLisp Code Via Serial Connection
+
+#+BEGIN_SRC sh
+
+# your /dev/ttyACM* device may be different. lsusb for specificity.
+tio -b9600 /dev/ttyACM0
+
+#+END_SRC
+#+BEGIN_SRC lisp
+
+  ;; RGB now
+  (defvar rp 3)
+  (defvar gp 5)
+  (defvar bp 6)
+
+  (defvar dly 2) 
+
+ 
+  (defun stp ()
+    (pinmode rp t)
+    (pinmode gp t)
+    (pinmode bp t)) 
+
+
+  (defun red (n)
+    (analogwrite rp n))
+
+  (defun gre (n)
+    (analogwrite gp n))
+
+  (defun blu (n)
+    (analogwrite bp n))
+
+  (defun rgb (a b c)
+    (red a)
+    (gre b)
+    (blu c))
+
+  (defun off ()
+    (red 255)
+    (gre 255)
+    (blu 255))
+
+
+  (defun on ()
+    (red 0)
+    (gre 0)
+    (blu 0))
+
+  (defun ron ()
+    (red (random 255))
+    (gre (random 255))
+    (blu (random 255)))
+
+
+  (defun rxn ()
+    (red (logxor 255 (random 255)))
+    (gre (logxor 255 (random 255)))
+    (blu (logxor 255 (random 255))))
+
+
+  (defvar max 256)
+  (defvar dll 500)
+
+  (dotimes (x 4)
+    (rxn)
+    (delay 800)
+    (ron)
+    (delay 800)
+    (off))
+#+END_SRC

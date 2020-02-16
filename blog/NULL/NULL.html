@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+    </head>
+    <body contenteditable="true">
+
+
+	
+      <pre>
+	<input type="text"/>
+      <code class="javascript">
+	
+      </code>
+    </script>
+    
+    </body>
+	<script>
+	  const input = document.querySelector('input');
+	  const log = document.getElementById('pre');
+	  input.addEventListener('input', update);
+	  function update (e) {
+
+	  log.textContent = e.target.value;
+	  alert(e.target.value);
+	  
+	  }
+
+	  hljs.initHightlightLightingOnLoad();
+	</script>
+
+</html>
+
