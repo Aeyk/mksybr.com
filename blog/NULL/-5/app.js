@@ -30,7 +30,10 @@ oReq.onload = function(oEvent) {
         }
     }
     //     console.log(byteArray); end of scope that byteArray is available
-    document.querySelector("pre").innerHTML = byteArray.toString(16).split(',');
+    for (byt in byteArray) {
+        document.querySelector("pre").innerHTML += byt.toString(16);
+    }
+
 };
 
 oReq.send(null)
