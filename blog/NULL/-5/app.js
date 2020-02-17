@@ -19,7 +19,7 @@ var key = new Array(16);
 
 
 var oReq = new XMLHttpRequest();
-oReq.open("GET", "helloworld.rom", true);
+oReq.open("GET", "./helloworld.rom", true);
 oReq.responseType = "arraybuffer";
 let arrayBuffer;
 oReq.onload = function (oEvent) {
@@ -33,12 +33,12 @@ oReq.onload = function (oEvent) {
 console.log(arrayBuffer);
 oReq.send(null)
 
-function open_hello_world() {
-    let fr = new FileReader();
-    console.log(fr.readAsBinaryString("helloworld.rom"));
-}
+// function open_hello_world() {
+//     let fr = new FileReader();
+//     console.log(fr.readAsBinaryString("helloworld.rom"));
+// }
 
-open_hello_world();
+// open_hello_world();
 
 
 function disam_opcode(opcode) {
