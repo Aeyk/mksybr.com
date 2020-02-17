@@ -37,7 +37,7 @@ oReq.onload = function(oEvent) {
         hello_world_rom +=
             ('00' + byteArray[byt].toString(16)).slice(-2) || '';
     }
-    console.log(hello_world_rom.toString().match(/.{1,4}/, 'g'));
+    console.log(hello_world_rom.toString().match(/.{1,4}/g));
 
 };
 
