@@ -20,7 +20,7 @@ var key = new Array(16);
 
 function open_hello_world() {
     let fr = new FileReader();
-    console.log(fr.readAsBinaryString("helloworld.rom");
+    console.log(fr.readAsBinaryString("helloworld.rom"));
 }
 
 open_hello_world();
