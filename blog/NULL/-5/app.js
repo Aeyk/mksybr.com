@@ -1,4 +1,4 @@
--5
+
 // https://en.wikipedia.org/wiki/CHIP-8#Opcode_table
 
 
@@ -32,8 +32,8 @@ oReq.onload = function(oEvent) {
     //     console.log(byteArray); end of scope that byteArray is available
     for (byt in byteArray) {
         document.querySelector("p").innerHTML +=
-            (('00' + byteArray[byt].toString(16)).slice(-2)
-                .match(new RegExp('.{1,4}', 'g')).toString());
+            ('00' + byteArray[byt].toString(16)).slice(-2)
+                .match(new RegExp('.{1,4}', 'g'));
     }
 
 };
