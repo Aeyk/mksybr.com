@@ -19,19 +19,18 @@ var key = new Array(16);
 
 
 var oReq = new XMLHttpRequest();
-oReq.open("GET", "/helloworld.rom", true);
+oReq.open("GET", "helloworld.rom", true);
 oReq.responseType = "arraybuffer";
-
+let arrayBuffer;
 oReq.onload = function (oEvent) {
-  var arrayBuffer = oReq.response; // Note: not oReq.responseText
+  arrayBuffer = oReq.response; // Note: not oReq.responseText
   if (arrayBuffer) {
     var byteArray = new Uint8Array(arrayBuffer);
     for (var i = 0; i < byteArray.byteLength; i++) {
-	console.log(byteArray);
     }
   }
 };
-
+console.log(arrayBuffer);
 oReq.send(null)
 
 function open_hello_world() {
