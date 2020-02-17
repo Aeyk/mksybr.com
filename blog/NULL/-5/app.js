@@ -18,7 +18,7 @@ var stack_pointer;
 var key = new Array(16);
 
 
-let hello_world_rom;
+let hello_world_rom = '';
 
 var oReq = new XMLHttpRequest();
 oReq.open("GET", "./helloworld.rom", true);
