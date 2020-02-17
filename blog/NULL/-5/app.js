@@ -1,4 +1,4 @@
-
+-5
 // https://en.wikipedia.org/wiki/CHIP-8#Opcode_table
 
 
@@ -19,7 +19,8 @@ var key = new Array(16);
 
 
 function open_hello_world() {
-    console.log(new File(".", "/helloworld.rom").getAsBinary());
+    let fr = new FileReader();
+    console.log(fr.readAsBinaryString("helloworld.rom");
 }
 
 open_hello_world();
