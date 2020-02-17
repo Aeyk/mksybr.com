@@ -31,7 +31,7 @@ oReq.onload = function(oEvent) {
     }
     //     console.log(byteArray); end of scope that byteArray is available
     for (byt in byteArray) {
-        document.querySelector("pre").innerHTML += byteArray[byt].toString(16);
+        document.querySelector("pre").innerHTML += byteArray[byt].toString(16) + " ";
     }
 
 };
