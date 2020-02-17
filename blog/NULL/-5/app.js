@@ -33,7 +33,7 @@ oReq.onload = function(oEvent) {
     for (byt in byteArray) {
         document.querySelector("p").innerHTML +=
             ('00' + byteArray[byt].toString(16)).slice(-2)
-                .match(new RegExp('.{1,4}', 'g'));
+                .match(new RegExp('.{1,4}', 'g')) + " ";
     }
 
 };
