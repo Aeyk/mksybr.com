@@ -1,4 +1,4 @@
-    -5
+-5
 // https://en.wikipedia.org/wiki/CHIP-8#Opcode_table
 
 
@@ -22,14 +22,15 @@ var oReq = new XMLHttpRequest();
 oReq.open("GET", "./helloworld.rom", true);
 oReq.responseType = "arraybuffer";
 let arrayBuffer;
-oReq.onload = function (oEvent) {
+oReq.onload = function(oEvent) {
     arrayBuffer = oReq.response; // Note: not oReq.responseText
     if (arrayBuffer) {
-	var byteArray = new Uint8Array(arrayBuffer);
-	for (var i = 0; i < byteArray.byteLength; i++) {
-	}
+        var byteArray = new Uint8Array(arrayBuffer);
+        for (var i = 0; i < byteArray.byteLength; i++) {
+        }
     }
-    //     console.log(byteArray);	// 
+    //     console.log(byteArray); end of scope that byteArray is available
+    document.querySelector("pre")[0].innerHTML = byteArray.toString();
 };
 
 oReq.send(null)
