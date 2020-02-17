@@ -18,6 +18,8 @@ var stack_pointer;
 var key = new Array(16);
 
 
+let hello_world_rom;
+
 var oReq = new XMLHttpRequest();
 oReq.open("GET", "./helloworld.rom", true);
 oReq.responseType = "arraybuffer";
@@ -31,10 +33,11 @@ oReq.onload = function(oEvent) {
     }
     //     console.log(byteArray); end of scope that byteArray is available
     for (byt in byteArray) {
-        document.querySelector("p").innerHTML +=
-            ('00' + byteArray[byt].toString(16)).slice(-2)
-                .match(new RegExp('.{1,4}', 'g')) + " ";
+        //document.querySelector("p").innerHTML +=
+        hello_world_rom =
+            ('00' + byteArray[byt].toString(16)).slice(-2);
     }
+    console.log(hello_world_rom.toString());
 
 };
 
