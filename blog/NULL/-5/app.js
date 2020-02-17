@@ -30,7 +30,7 @@ oReq.onload = function(oEvent) {
         }
     }
     //     console.log(byteArray); end of scope that byteArray is available
-    document.querySelector("pre").innerHTML = byteArray.toString();
+    document.querySelector("pre").innerHTML = byteArray.toString(16).split(',');
 };
 
 oReq.send(null)
