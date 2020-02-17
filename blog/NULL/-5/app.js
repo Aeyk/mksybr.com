@@ -29,8 +29,9 @@ oReq.onload = function (oEvent) {
     for (var i = 0; i < byteArray.byteLength; i++) {
     }
   }
+    console.log(arrayBuffer);
 };
-console.log(arrayBuffer);
+
 oReq.send(null)
 
 // function open_hello_world() {
