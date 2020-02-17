@@ -32,7 +32,7 @@ oReq.onload = function(oEvent) {
     //     console.log(byteArray); end of scope that byteArray is available
     for (byt in byteArray) {
         document.querySelector("pre").innerHTML +=
-            ('00' + byteArray[byt].toString(16)) + " ";
+            ('00' + byteArray[byt].toString(16)).slice(-2) + " ";
     }
 
 };
