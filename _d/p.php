@@ -1,3 +1,5 @@
+/* http://brandonsummers.name/blog/2012/02/10/using-bitbucket-for-automated-deployments/ */
+
 <?php
 
 date_default_timezone_set('America/Los_Angeles');
