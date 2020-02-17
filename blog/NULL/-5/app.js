@@ -29,7 +29,7 @@ oReq.onload = function (oEvent) {
     for (var i = 0; i < byteArray.byteLength; i++) {
     }
   }
-    console.log(arrayBuffer);
+    console.log(byteArray);
 };
 
 oReq.send(null)
