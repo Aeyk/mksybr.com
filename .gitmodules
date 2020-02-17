@@ -1,0 +1,3 @@
+[submodule "stage.js"]
+	path = stage.js
+	url = https://github.com/shakiba/stage.js

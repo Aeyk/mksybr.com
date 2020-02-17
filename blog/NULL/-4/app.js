@@ -31,8 +31,8 @@ function Physics(ui) {
   var BULLET_LIFE_TIME = 2000;
 
   var asteroidRadius = 0.9;
-  var asteroidSpeed = 3;
-  var asteroidLevels = 4;
+  var asteroidSpeed = 0;
+  var asteroidLevels = 5;
 
   // game state
   var state = {
@@ -290,16 +290,16 @@ function Physics(ui) {
 
       // Remove asteroid
       world.destroyBody(asteroidBody);
-      asteroidBodies.splice(aidx, 1);
+       asteroidBodies.splice(aidx, 1);
       // asteroidBody.uiRemove();
 
       // Remove bullet
       world.destroyBody(bulletBody);
-      bulletBodies.splice(bidx, 1);
+      // bulletBodies.splice(bidx, 1);
       // bulletBody.uiRemove();
 
       // Add new sub-asteroids
-      splitAsteroid(asteroidBody);
+      // splitAsteroid(asteroidBody);
     }
 
     if (asteroidBodies.length == 0) {
