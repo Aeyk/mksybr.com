@@ -80,7 +80,6 @@ function main_loop() {
 }
 
 
-}
 /* OPCODES FOR HELLO WORLD
    0: "6278"  6XNN	Const	Vx = NN	Sets VX to NN. i.e sets 27 to 78.
    1: "a500"  ANNN	MEM	I = NNN	Sets I to the address NNN.
