@@ -128,7 +128,7 @@ var Chip8 = {
             switch (op[0]) {
                 case '6':
                     for (nibs in op) {
-                        return op[2].toNumber();
+                        return op[2];
                     }
             }
         }
