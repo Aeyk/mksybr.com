@@ -48,8 +48,9 @@ function draw() {
 		noteStack.push(aToneBag[tone]);
             }
 	}
-
     }
+
+ 
 
     let barSpeed = 48;
 
@@ -124,7 +125,8 @@ function handleNoteVelocity() {
         filterFreq += 1;
     } else if (key == "a" || key == "A") {
         filterFreq -= 1;
-    } 
+    }
+}
 
 function midi2note(midi) {
     return (2 ** ((midi - 69) / 12)) * 440;
@@ -134,7 +136,6 @@ function keyPressed() {
     clear();
     osc.start();
     handleNoteVelocity();
-
 }
 
 function keyReleased() {
