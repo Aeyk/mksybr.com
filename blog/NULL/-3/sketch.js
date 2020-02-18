@@ -42,8 +42,10 @@ function youLose() {
 }
 
 function draw() {
+    let toneBags = [aveToneBag, bassToneBag, halToneBag];
     if (noteStack.length == 0) {
-	for(aToneBag in [aveToneBag, bassToneBag, halToneBag]) {
+	for(aToneBag in toneBags) {
+	    console.log(toneBags[aToneBag]);
 	    for (tone in aToneBag) {
 		noteStack.push(aToneBag[tone]);
             }
