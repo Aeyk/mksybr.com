@@ -43,7 +43,12 @@ function youLose() {
 
 function draw() {
     if (noteStack.length == 0) {
-        youLose();
+	for(aToneBag in [aveToneBag, bassToneBag, halToneBag]) {
+	    for (tone in aToneBag) {
+		noteStack.push(aToneBag[tone]);
+            }
+	}
+
     }
 
     let barSpeed = 48;
