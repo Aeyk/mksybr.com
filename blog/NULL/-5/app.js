@@ -80,8 +80,6 @@ function main_loop() {
 }
 
 
-function Chip8.() {
-
 }
 /* OPCODES FOR HELLO WORLD
    0: "6278"  6XNN	Const	Vx = NN	Sets VX to NN. i.e sets 27 to 78.
