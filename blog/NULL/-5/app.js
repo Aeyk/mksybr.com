@@ -133,3 +133,5 @@ var Chip8 = {
         }
     }
 };
+
+console.log(Chip8.lookupOpcode("6278"));
