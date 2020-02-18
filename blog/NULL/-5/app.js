@@ -110,9 +110,10 @@ function main_loop() {
 
 
 var Chip8 = {
+    var index;
     memory: {},
     init: function() {
-
+        index = 0;
     },
     emulateSingleCycle: function() {
         // Lookup Opcode
@@ -132,6 +133,9 @@ var Chip8 = {
                 dest = op.substr(1, 2);
                 src = op.substr(2, 3);
                 return Chip8.memory[dest] = src;
+            case 'a':
+                this.index = op.substr(1, 4);
+                return index;
         }
 
     }
