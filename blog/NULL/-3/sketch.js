@@ -84,7 +84,9 @@ function draw() {
 
 function handleNoteVelocity() {
     if (keyCode === ESCAPE) {
+	note = noteStack[Math.random * noteStack.length - 1]
         noteStack.push(note);
+
     } else if (key == 'k' || key == 'K') {
         for (tone in bassToneBag) {
             noteStack.push(bassToneBag[tone]);
