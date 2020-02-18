@@ -136,7 +136,7 @@ var Chip8 = {
             case 'a':
             case 'A':
                 Chip8.index = op.substr(1, 4);
-                console.log(this.index);
+                console.log(Chip8.index);
                 return index;
         }
 
