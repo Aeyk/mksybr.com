@@ -119,10 +119,7 @@ function handleNoteVelocity() {
         filterFreq += 1;
     } else if (key == "a" || key == "A") {
         filterFreq -= 1;
-    } else if (keyCode === SPACE) {
-
-    }
-}
+    } 
 
 function midi2note(midi) {
     return (2 ** ((midi - 69) / 12)) * 440;
