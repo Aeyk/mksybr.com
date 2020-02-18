@@ -124,6 +124,7 @@ var Chip8 = {
     },
     lookupOpcode: function(op) {
         if (op.length !== 4) {
+            console.log(op, op.length);
             switch (op[0]) {
                 case '6':
                     for (nibs in op) {
