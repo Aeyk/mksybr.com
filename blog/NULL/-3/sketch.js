@@ -84,7 +84,7 @@ function draw() {
 
 function handleNoteVelocity() {
     if (keyCode === ESCAPE) {
-	console.log(Math.random * (noteStack.length - 1));
+	console.log(noteStack[Math.round(Math.random() * noteStack.length)]);
         noteStack.push(note);
 
     } else if (key == 'k' || key == 'K') {
