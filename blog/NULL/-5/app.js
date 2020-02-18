@@ -37,7 +37,7 @@ oReq.onload = function(oEvent) {
         hello_world_rom +=
             ('00' + byteArray[byt].toString(16)).slice(-2) || '';
     }
-    hello_world_code = hello_world_rom.toString().match(/.{1,4}/g).toArray();
+    hello_world_code = (hello_world_rom.toString().match(/.{1,4}/g));
     console.log(hello_world_code);
 };
 
