@@ -33,12 +33,12 @@ oReq.onload = function(oEvent) {
     }
     //     console.log(byteArray); end of scope that byteArray is available
     for (byt in byteArray) {
-        //document.querySelector("p").innerHTML +=
+
         hello_world_rom +=
             ('00' + byteArray[byt].toString(16)).slice(-2) || '';
     }
     hello_world_code = (hello_world_rom.toString().match(/.{1,4}/g));
-    console.log(hello_world_code);
+    document.querySelector("p").innerHTML += hello_world_code
 };
 
 oReq.send(null)
