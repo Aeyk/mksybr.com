@@ -62,7 +62,7 @@ function draw() {
         "ARROW KEYS SPACEBAR", 100, 160);
     ticker += 1;
 
-    if (ticker % tickerSpeed == 
+    if (ticker % tickerSpeed == 0) {
         if (noteStack.length >= 1)
             note = noteStack.pop();
     }
