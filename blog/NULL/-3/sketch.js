@@ -46,7 +46,7 @@ function draw() {
     if (noteStack.length == 0) {
 	for(aToneBag in toneBags) {
 	    console.log(toneBags[aToneBag]);
-	    for (tone in aToneBag) {
+	    for (tone in toneBags[aToneBag]) {
 		noteStack.push(aToneBag[tone]);
             }
 	}
