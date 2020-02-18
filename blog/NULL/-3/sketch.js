@@ -62,8 +62,7 @@ function draw() {
         "ARROW KEYS SPACEBAR", 100, 160);
     ticker += 1;
 
-    if (ticker % tickerSpeed == 0) {
-        text(ticker, 10, 210);
+    if (ticker % tickerSpeed == 
         if (noteStack.length >= 1)
             note = noteStack.pop();
     }
@@ -71,7 +70,9 @@ function draw() {
 
 
 
+    
     text(midi2note(note), noteX, noteY);
+    text(ticker, noteX, noteY+108);
     text(note, noteX, noteY + 24);
     text(filterRes, noteX, noteY + 48);
     text(filterFreq, noteX + 16, noteY + 48);
