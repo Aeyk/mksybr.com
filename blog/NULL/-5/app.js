@@ -136,7 +136,7 @@ var Chip8 = {
             case 'a':
             case 'A':
                 Chip8.registers[index] = op.substr(1, 4);
-                console.log(Chip8.registers[index]];
+                console.log(Chip8.registers[index]);
                 return Chip8.registers[index];
         }
 
