@@ -123,8 +123,8 @@ var Chip8 = {
         // Update Timers
     },
     lookupOpcode: function(op) {
-        console.log(op, op.length);
-        if (op.length !== 4) {
+        if (op.length != 4) {
+            console.log(op, op.length);
             switch (op[0]) {
                 case '6':
                     for (nibs in op) {
