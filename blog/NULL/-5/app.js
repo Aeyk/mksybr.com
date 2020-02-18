@@ -128,7 +128,7 @@ var Chip8 = {
             switch (op[0]) {
                 case '6':
                     for (nibs in op) {
-                        return op.slice(1, 2);
+                        return op.substr(1, 2);
                     }
             }
         }
