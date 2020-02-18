@@ -109,13 +109,11 @@ function main_loop() {
 */
 
 
-
-
-
-
 var Chip8 = {
-    memory: new Array(4096),
-    init: function() { },
+    memory: {},
+    init: function() {
+
+    },
     emulateSingleCycle: function() {
         // Lookup Opcode
         // Decode Opcode
@@ -123,18 +121,19 @@ var Chip8 = {
         // Update Timers
     },
     lookupOpcode: function(op) {
-        let dest, src;
-        if (op.length == 4) {
-            switch (op[0]) {
-                case '6':
-                    for (nibs in op) {
-                        dest = op.substr(1, 2);
-                        src = op.substr(2, 3);
-                        memory[dest] = src
-                        console.log(dest + " " + src)
-                    }
-            }
+        if (op.length == 4) {   // ensure opcode is 4 bytes
+            this.decodeOpcode(op);
         }
+    },
+    decodeOpcode: function(op) {
+        let dest, src;
+        switch (op[0]) {
+            case '6':
+                dest = op.substr(1, 2);
+                src = op.substr(2, 3);
+                return Chip8.memory[dest] = src;
+        }
+
     }
 };
 
