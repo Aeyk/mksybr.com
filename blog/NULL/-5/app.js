@@ -85,7 +85,8 @@ function main_loop() {
    1: "a500"  ANNN	MEM	I = NNN	Sets I to the address NNN.
    2: "6301"  6XNN
    3: "6401"  6XNN
-   4: "f10a"
+   4: "f10a" Wait for a key press, store the value of the key in Vx.
+
    5: "00e0"  0NNN	Call		Calls RCA 1802 program at address NNN. 
    Not necessary for most ROMs.
    6: "f218"  FX18	Sound	sound_timer(Vx)	    Sets the sound timer to VX.
