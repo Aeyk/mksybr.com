@@ -1,0 +1,74 @@
+body {
+    margin: 40px;
+}
+
+.tictactoe {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vh;
+    color: #FFF;
+}
+
+.box {
+    padding: 3VW;
+    font-size: 10VH;
+    background-color: #333;
+    color: #fff;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width: 1023px) {
+    .tictactoe {
+	grid-template-rows: 1fr 1fr 1fr;
+	width: 92VW;
+	height: 53VH;
+    }
+    .box {
+    }
+    a > button {
+	margin-top: 3VH;
+	margin-bottom: 3VH;
+	width: 92VW;
+	height: 10VH;
+	font-size: 4VH;
+    }
+    h1 {
+	width: 92VW;
+	height: 12VH;
+	font-size: 10VH;
+    }
+
+}
+@media only screen and (min-device-width : 1024px) {
+    .scoreboard {
+        width: 50%;
+        border:#333 solid 1px;
+
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2vh;
+    }
+
+    .tictactoe {
+    	width: 30VW;
+	    height: 55VH;
+    }
+
+    .box {
+	padding: 10px;
+	background-color: #333;
+    }
+
+    a > button {
+	font-size: 5vh;
+	padding-top: 10px;
+	margin-top: 10px;
+	width: 30VW;
+    }
+
+    h1 {
+	font-size: 6VW;
+    }
+}
