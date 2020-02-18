@@ -81,7 +81,7 @@ function main_loop() {
 
 
 /* OPCODES FOR HELLO WORLD
-   0: "6278"  6XNN	Const	Vx = NN	Sets VX to NN. i.e sets 27 to 78.
+   0: "6278"  6XNN	Const	Vx = NN	Sets VX to NN. i.e sets addr#27 to 78.
    1: "a500"  ANNN	MEM	I = NNN	Sets I to the address NNN.
    2: "6301"  6XNN
    3: "6401"  6XNN
@@ -123,16 +123,18 @@ var Chip8 = {
         // Update Timers
     },
     lookupOpcode: function(op) {
+        let dest, src;
         if (op.length == 4) {
-            console.log(op, op.length);
             switch (op[0]) {
                 case '6':
                     for (nibs in op) {
-                        return op.substr(1, 2);
+                        dest = op.substr(1, 2);
+                        src = op.substr(2, 3);
+                        memory[dest] = src
+                        console.log(dest + " " + src)
                     }
             }
         }
     }
 };
 
-console.log(Chip8.lookupOpcode("6278"));
