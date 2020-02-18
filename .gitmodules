@@ -4,3 +4,6 @@
 [submodule "blog/NULL/blog/NULL/-6"]
 	path = blog/NULL/blog/NULL/-6
 	url = git@github.com:Aeyk/tictactoe.git
+[submodule "blog/NULL/6"]
+	path = blog/NULL/6
+	url = git@github.com:Aeyk/tictactoe.git
