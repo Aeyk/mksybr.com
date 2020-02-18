@@ -134,6 +134,7 @@ var Chip8 = {
                 src = op.substr(2, 3);
                 return Chip8.memory[dest] = src;
             case 'a':
+            case 'A':
                 this.index = op.substr(1, 4);
                 return index;
         }
