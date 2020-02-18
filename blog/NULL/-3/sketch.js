@@ -84,7 +84,6 @@ function draw() {
 
 function handleNoteVelocity() {
     if (keyCode === ESCAPE) {
-	console.log(noteStack[Math.round(Math.random() * noteStack.length)]);
         noteStack.push(note);
 
     } else if (key == 'k' || key == 'K') {
@@ -110,15 +109,18 @@ function handleNoteVelocity() {
     } else if (key == ' ') {
         if (noteStack.length >= 1) {
             note = noteStack.pop();
-        }
+	}
     } else if (key == "w" || key == "W") {
         filterRes += 1;
+	note = noteStack[Math.round(Math.random() * noteStack.length)] || 32;
     } else if (key == "s" || key == "S") {
         filterRes -= 1;
     } else if (key == "d" || key == "D") {
         filterFreq += 1;
     } else if (key == "a" || key == "A") {
         filterFreq -= 1;
+    } else if (keyCode === SPACE) {
+
     }
 
 }
