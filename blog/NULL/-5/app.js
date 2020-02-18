@@ -110,7 +110,7 @@ function main_loop() {
 
 
 var Chip8 = {
-    registers: { i: 0 },
+    registers: { index: 0 },
     memory: {},
     init: function() {
         index = 0;
