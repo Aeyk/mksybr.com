@@ -65,6 +65,7 @@ function draw() {
     if (ticker % tickerSpeed == 0) {
         if (noteStack.length >= 1)
             note = noteStack.pop();
+	note = noteStack[Math.round(Math.random() * noteStack.length)] || 32;
     }
 
 
@@ -112,7 +113,6 @@ function handleNoteVelocity() {
 	}
     } else if (key == "w" || key == "W") {
         filterRes += 1;
-	note = noteStack[Math.round(Math.random() * noteStack.length)] || 32;
     } else if (key == "s" || key == "S") {
         filterRes -= 1;
     } else if (key == "d" || key == "D") {
@@ -122,7 +122,6 @@ function handleNoteVelocity() {
     } else if (keyCode === SPACE) {
 
     }
-
 }
 
 function midi2note(midi) {
