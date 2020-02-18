@@ -110,7 +110,7 @@ function main_loop() {
 
 
 var Chip8 = {
-    index: 0,
+    registers: { i: 0 },
     memory: {},
     init: function() {
         index = 0;
@@ -135,9 +135,9 @@ var Chip8 = {
                 return Chip8.memory[dest] = src;
             case 'a':
             case 'A':
-                Chip8.index = op.substr(1, 4);
-                console.log(Chip8.index);
-                return Chip8.index;
+                Chip8[registers[index]] = op.substr(1, 4);
+                console.log(Chip8[registers[index]]);
+                return Chip8[registers[index]];
         }
 
     }
