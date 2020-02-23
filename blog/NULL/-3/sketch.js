@@ -1,6 +1,6 @@
 let note = 36;
 let tickerSpeed = 40;
-let aveToneBag = [30, 30, 34, 36];
+let aveToneBag = [40, 40, 34, 36];
 let bassToneBag = [32, 36, 39, 40];
 let halToneBag = [40, 40, 34, 46];
 
@@ -12,6 +12,7 @@ let oscList = [];
 let ff = 10;
 let noteX = 30;
 let noteY = 30;
+
 function setup() {
     osc = new p5.SinOsc;
     fft = new p5.FFT;
@@ -44,16 +45,16 @@ function youLose() {
 function draw() {
     let toneBags = [aveToneBag, bassToneBag, halToneBag];
     if (noteStack.length == 0) {
-	for(aToneBag in toneBags) {
-	    console.log(toneBags[aToneBag]);
-	    let bag = toneBags[aToneBag];
-	    for (tone in bag) {
-		noteStack.push(bag[tone]);
+        for (aToneBag in toneBags) {
+            console.log(toneBags[aToneBag]);
+            let bag = toneBags[aToneBag];
+            for (tone in bag) {
+                noteStack.push(bag[tone]);
             }
-	}
+        }
     }
 
- 
+
 
     let barSpeed = 48;
 
@@ -74,15 +75,15 @@ function draw() {
     if (ticker % tickerSpeed == 0) {
         if (noteStack.length >= 1)
             note = noteStack.pop();
-	note = noteStack[Math.round(Math.random() * noteStack.length)] || 32;
+        note = noteStack[Math.round(Math.random() * noteStack.length)] || 32;
     }
 
 
 
 
-    
+
     text(midi2note(note), noteX, noteY);
-    text(ticker%tickerSpeed, noteX, noteY+108);
+    text(ticker % tickerSpeed, noteX, noteY + 108);
     text(note, noteX, noteY + 24);
     text(filterRes, noteX, noteY + 48);
     text(filterFreq, noteX + 16, noteY + 48);
@@ -119,7 +120,7 @@ function handleNoteVelocity() {
     } else if (key == ' ') {
         if (noteStack.length >= 1) {
             note = noteStack.pop();
-	}
+        }
     } else if (key == "w" || key == "W") {
         filterRes += 1;
     } else if (key == "s" || key == "S") {
@@ -141,6 +142,4 @@ function keyPressed() {
     handleNoteVelocity();
 }
 
-function keyReleased() {
-}
-
+function keyReleased() {}
