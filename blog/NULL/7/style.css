@@ -1,10 +1,11 @@
 body {
+    width: 80%;
     margin: 40px;
 }
 
 .tictactoe {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     grid-gap: 2vh;
     color: #FFF;
 }
@@ -17,9 +18,12 @@ body {
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width: 1023px) {
+    main {
+	
+    }
     .tictactoe {
 	grid-template-rows: 1fr 1fr 1fr;
-	width: 92VW;
+	width: 02VW;
 	height: 53VH;
     }
     .box {
@@ -44,8 +48,8 @@ body {
         border:#333 solid 1px;
 
     }
-
     main {
+	
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 2vh;
