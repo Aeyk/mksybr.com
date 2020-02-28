@@ -1,3 +1,9 @@
 * DONE BUG missing style at root directory
 Failed to load resource: the server responded with a status of 404 (Not Found)
 * TODO BUG mobile: at 320 width,  jumbotron is too large.
+* DONE BUG from a blog post the portfolio is a broken link
+#+BEGIN_SOURCE sh
+$ grep  href=\"p -R
+#=> blog/1/index.html:                        <a class="nav-link" href="portfolio">Portfolio</a>
+#=> portfolio/index.html:              <a class="nav-link active" href="portfolio/">Portfolio</a>
+#+END_SOURCE
