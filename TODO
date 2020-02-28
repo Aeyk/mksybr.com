@@ -1,2 +1,3 @@
-* BUG missing style at root directory
+* DONE BUG missing style at root directory
 Failed to load resource: the server responded with a status of 404 (Not Found)
+* TODO BUG mobile: at 320 width,  jumbotron is too large.
