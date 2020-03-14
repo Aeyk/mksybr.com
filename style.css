@@ -20,10 +20,19 @@
  
 /* Small screens - MOBILE */
 @media only screen {
-    
+    a, p, h1 {
+	font-family: 'KongtextRegular';
+    }
+    .jumbotron a[role=button] {
+	width: 100%
+    }
+    .display-4 {
+	text-align: center;
+    }
 } /* Define mobile styles - Mobile First */
  
-@media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 40em) {
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
  
 /* Medium screens - TABLET */
 @media only screen and (min-width: 40.063em) { } /* min-width 641px, medium screens */
@@ -81,5 +90,4 @@ only screen and (min-device-pixel-ratio: 1.5) {
 /* iPad Landscape */
 @media screen and (min-device-width: 481px) and (orientation:landscape) {
 }
- 
 

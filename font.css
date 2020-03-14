@@ -1,4 +1,17 @@
+/* font converted using font-converter.net. thank you! */
 @font-face {
-  font-family: 'Kongtext';
-      url('kongtext.ttf')  format('truetype'), 
+  font-family: "KongtextRegular";
+  src: url("./fonts/kongtext.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/kongtext.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/kongtext.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/kongtext.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/kongtext.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/kongtext.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/kongtext.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
 }
+
+
+
+
