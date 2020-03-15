@@ -1,0 +1,25 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "application.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aeyk/tictactoe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aeyk/tictactoe/issues"
+  },
+  "homepage": "https://github.com/Aeyk/tictactoe#readme",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.0"
+  }
+}
