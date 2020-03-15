@@ -11,8 +11,3 @@ describe('Array', function() {
 });
 
 
-describe('Div#Box' ()=>{
-    describe('should change on click', () => {
-	assert.
-    })
-})
