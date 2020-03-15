@@ -51,6 +51,11 @@
     }
 
 
+    .portfolio-card img {
+	max-width: 80%
+    }
+    
+
     
 } /* Define mobile styles - Mobile First */
  
