@@ -29,21 +29,34 @@
 	display: inline-block;
 	width: 100%;
     }
-    .portfolio-nav,
-    .card-disp    {
-	text-align: center;
-	
-    }
     .card-disp img {
-	width: 80%;
+	width: 200px;
+	height: 100px;
+    }
+
+    .card-disp h4
+    {
+	min-height: 150px
     }
     
     .portfolio-nav a:nth-of-type(2) {
 	color: green;
 	display: block;
     }
-
     
+    *{
+	font-family: 'KongtextRegular';
+    }
+
+    .jumbotron {
+	text-align: center;
+    }
+
+    .portfolio-nav,
+    .card-disp    {
+	text-align: center;
+	
+    }
     
 } /* Define mobile styles - Mobile First */
 
@@ -60,11 +73,9 @@
 /* min-width 1025px, large screens */
 @media only screen and (min-width: 64.063em) {
     .portfolio-card {
-	max-width: 80%;
+	width: 108px;
 	height: 40%;
     }
-    
-    
 }  
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
@@ -114,41 +125,4 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 /* iPad Landscape */
 @media screen and (min-device-width: 481px) and (orientation:landscape) {
-}
-
-*{
-    font-family: 'KongtextRegular';
-}
-
-.jumbotron {
-    text-align: center;
-}
-
-.blogpost_list{
-    margin-top: 30px;
-}
-
-.blogpost_list a li{
-    margin-top: 15px;
-}
-
-.row-eq-height {
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display:         flex;
- }
-
-.portfolio-card {
-    display: table;
-}
-
-.portfolio-nav {
-    vertical-align: bottom;
-}
-
-.card-disp {
-    display: table;
-    vertical-align: bottom;
-
 }
