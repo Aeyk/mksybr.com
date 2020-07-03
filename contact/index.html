@@ -51,7 +51,7 @@
       <!-- {"public_comments":{"name":}}-->
       <div class="main">
 	<h2>drop a msg</h2>
-	<form name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comment" >
+	<form name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comments" >
 	  <input name="name" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
 	  ​  <textarea name="content" cols="20" id="messageInput"></textarea>
 	  <input id="submitForm" type="button" value="beep boop"/>
@@ -101,7 +101,7 @@
     let inputForm = document.querySelector('form')
     submitForm.addEventListener("click", () => {
 
-      fetch("https://api.mksybr.com/public_comment")
+      fetch("https://api.mksybr.com/public_comments")
 	.then(e => e.body())
 	.then(e => console.log(e))
     })
