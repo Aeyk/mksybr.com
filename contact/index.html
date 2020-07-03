@@ -126,10 +126,10 @@ j<!doctype html>
     }
     //let inputForm = document.querySelector('form')
     let uri = "https://api.mksybr.com/public_comments";
-    let jsonReq = convertFormToJSON(inputForm);
-    JSON.stringify(Object.assign({"public_comments": {}}, jsonReq))
+    let jsonReq = $("#inputForm").serializeJSON();
     submitForm.addEventListener("click", () => {
-      postData(uri, JSON.stringify(Object.assign({"public_comments": {}}, jsonReq)));
+      postData(uri, jsonReq);
+
       // fetch()
       // 	.then(e => e.body())
       // 	.then(e => console.log(e))
