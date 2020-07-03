@@ -3,8 +3,6 @@
   <link href="https://mksybr.com/style.css" rel="stylesheet">
   <link href="https://mksybr.com/font.css" rel="stylesheet">
 
-
-
   <head>
     <meta charset="utf-8">
 
@@ -49,20 +47,62 @@
           </ul>
         </div>
       </nav>
-
+      <!-- {"public_comments":{"name":}}-->
       <div class="main">
 	<h2>drop a msg</h2>
-	  <form action="https://api.mksybr.com/contact">
-	    <input name="name" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
+	<form name="public_comments" method="POST " enctype='application/json' action="https://api.mksybr.com/contact">
+	  <input name="name" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
 	  ​  <textarea name="content" cols="20" id="messageInput"></textarea>
-	    <input name="" type="button" value="beep boop"/>
-	  </form>
+	  <input id="submitForm" type="button" value="beep boop"/>
+	</form>
       </div>
     </div>
     <style>
     </style>
   </body>
+  <script href="./script.js"></script>
+  <script>
+    /* Submit HTML form as function
+     Created by Keith Hackbarth 2018
+     Based off idea by David Tomaschik
+     https://systemoverlord.com/2016/08/24/posting-json-with-an-html-form.html
+     Example usage:
+     $("form").submit(function(event) {
+     event.preventDefault();
+     submitAsJSON(this);
+     });
+    */
 
+
+    /* Function takes a jquery form
+     and converts it to a JSON dictionary */
+    function convertFormToJSON(form){
+      var array = $(form).serializeArray();
+      var json = {};
+
+      $.each(array, function() {
+	json[this.name] = this.value || '';
+      });
+
+      return json;
+    }
+
+    /* Adds a new form to the body of a page with the JSON data encoded into it */
+    function submitAsJSON(form) {
+      var JSONString = JSON.stringify(convertFormToJSON(form)),
+	  HackyJSONString =  JSONString.slice(0, -1) + ', "trash": "';
+
+      inputForm.value = HackyJSONString
+      public_comments.submit()
+    }
+    let inputForm = document.querySelector('form')
+    submitForm.addEventListener("click", () => {
+      console.log(convertFormToJSON(inputForm))
+      submitAsJSON(inputForm);
+    })
+
+    </script>
+  
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity></script>
