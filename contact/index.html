@@ -87,45 +87,7 @@ j<!doctype html>
     }
 
 
-    
-    /* Submit HTML form as function
-     Created by Keith Hackbarth 2018
-     Based off idea by David Tomaschik
-     https://systemoverlord.com/2016/08/24/posting-json-with-an-html-form.html
-     Example usage:
-     $("form").submit(function(event) {
-     event.preventDefault();
-     submitAsJSON(this);
-     });
-    */
-
-
-    /* Function takes a jquery form
-     and converts it to a JSON dictionary */
-    function convertFormToJSON(form){
-      var array = $(form).serializeArray();
-      var json = {};
-
-      $.each(array, function() {
-	json[this.name] = this.value || '';
-      });
-
-      return json;
-    }
-
-    /* Adds a new form to the body of a page with the JSON data encoded into it */
-    function submitAsJSON(form) {
-      var JSONString = JSON.stringify(convertFormToJSON(form));
-      inputForm.value = JSONString
-      console.log(JSONString);
-      $(inputForm).submit(function(event) {
-	event.preventDefault();
-	//	submitAsJSON(this);
-	
-      });
-    }
-    //let inputForm = document.querySelector('form')
-    let uri = "https://api.mksybr.com/public_comments";
+ let uri = "https://api.mksybr.com/public_comments";
     let jsonReq = $("#inputForm").serializeJSON();
     submitForm.addEventListener("click", () => {
       postData(uri, jsonReq);
