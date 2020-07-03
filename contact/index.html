@@ -8,6 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- bootstrap 4.3 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- import Roboto, Oswald, Source Code Pro Google Font -->
@@ -50,7 +51,7 @@
       <!-- {"public_comments":{"name":}}-->
       <div class="main">
 	<h2>drop a msg</h2>
-	<form name="public_comments" method="POST " enctype='application/json' action="https://api.mksybr.com/contact">
+	<form name="public_comments" method="post" enctype='text/plain' >
 	  <input name="name" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
 	  ​  <textarea name="content" cols="20" id="messageInput"></textarea>
 	  <input id="submitForm" type="button" value="beep boop"/>
@@ -89,15 +90,16 @@
 
     /* Adds a new form to the body of a page with the JSON data encoded into it */
     function submitAsJSON(form) {
-      var JSONString = JSON.stringify(convertFormToJSON(form)),
-	  HackyJSONString =  JSONString.slice(0, -1) + ', "trash": "';
-
-      inputForm.value = HackyJSONString
-      public_comments.submit()
+      var JSONString = JSON.stringify(convertFormToJSON(form));
+      inputForm.value = JSONString
+      console.log(JSONString)
+      $(inputForm).submit(function(event) {
+	event.preventDefault();
+	submitAsJSON(this);
+      });
     }
     let inputForm = document.querySelector('form')
     submitForm.addEventListener("click", () => {
-      console.log(convertFormToJSON(inputForm))
       submitAsJSON(inputForm);
     })
 
