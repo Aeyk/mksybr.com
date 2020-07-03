@@ -1,4 +1,4 @@
-<!doctype html>
+j<!doctype html>
 <html lang="en">
   <link href="https://mksybr.com/style.css" rel="stylesheet">
   <link href="https://mksybr.com/font.css" rel="stylesheet">
@@ -51,10 +51,12 @@
       <!-- {"public_comments":{"name":}}-->
       <div class="main">
 	<h2>drop a msg</h2>
-	<form name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comments" >
-	  <input name="name" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
-	  ​  <textarea name="content" cols="20" id="messageInput"></textarea>
-	  <input id="submitForm" type="button" value="beep boop"/>
+	<form id="inputForm" name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comments" >
+
+	    <input name="public_comments[name]" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
+	  ​  <textarea name="public_comments[content]" cols="20" id="messageInput"></textarea>
+	    <input id="submitForm" type="button" value="beep boop"/>
+
 	</form>
       </div>
     </div>
@@ -62,7 +64,7 @@
     </style>
   </body>
           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
+	  <script src="./jquery.serializejson.js"></script>
   <script href="./script.js"></script>
   <script>
     // Example POST method implementation: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
@@ -122,11 +124,12 @@
 	
       });
     }
-    let inputForm = document.querySelector('form')
+    //let inputForm = document.querySelector('form')
     let uri = "https://api.mksybr.com/public_comments";
     let jsonReq = convertFormToJSON(inputForm);
+    JSON.stringify(Object.assign({"public_comments": {}}, jsonReq))
     submitForm.addEventListener("click", () => {
-      postData(uri, JSON.stringify(Object.assign({"public_comments": {}, jsonReq})));
+      postData(uri, JSON.stringify(Object.assign({"public_comments": {}}, jsonReq)));
       // fetch()
       // 	.then(e => e.body())
       // 	.then(e => console.log(e))
