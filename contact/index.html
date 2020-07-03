@@ -124,10 +124,10 @@
     let uri = "https://api.mksybr.com/public_comments";
     let jsonReq = convertFormToJSON(inputForm);
     submitForm.addEventListener("click", () => {
-      postData(uri, jsonReq);
-      fetch()
-	.then(e => e.body())
-	.then(e => console.log(e))
+      postData(uri, JsonReq);
+      // fetch()
+      // 	.then(e => e.body())
+      // 	.then(e => console.log(e))
     })
 
   </script>
