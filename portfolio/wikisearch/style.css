@@ -1,4 +1,4 @@
-form, form > *, button {
+form, form > *, #submitButton {
     width: 100%;
     text-align: center;
     padding-top: 10;
