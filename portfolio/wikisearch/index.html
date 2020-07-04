@@ -49,7 +49,7 @@
 	  randomButton.click();
 	}
 
-	let url = `https://api.mksybr.com/wikipedia_query?q=${query}`
+	let url = `https://api.mksybr.com/wikipedia_search/query?q=${query}`
 	
 	let response = await fetch(url, {
 	  method: 'GET',
