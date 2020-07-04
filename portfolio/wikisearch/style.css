@@ -1,0 +1,17 @@
+form, form > * {
+    width: 100%;
+    text-align: center;
+    padding-top: 10;
+    padding-bottom: 10;
+}
+
+
+body {
+    padding: 30px;
+}
+
+button {
+    margin-top: 30px;
+}
+
+
