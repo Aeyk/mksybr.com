@@ -1,4 +1,4 @@
-j<!doctype html>
+<!doctype html>
 <html lang="en">
   <link href="https://mksybr.com/style.css" rel="stylesheet">
   <link href="https://mksybr.com/font.css" rel="stylesheet">
@@ -51,7 +51,7 @@ j<!doctype html>
       <!-- {"public_comments":{"name":}}-->
       <div class="main">
 	<h2>drop a msg</h2>
-	<form id="inputForm" name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comments" >
+	<form id="inputForm" name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comment" >
 
 	    <input name="public_comments[name]" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
 	  ​  <textarea name="public_comments[content]" cols="20" id="messageInput"></textarea>
@@ -63,8 +63,8 @@ j<!doctype html>
     <style>
     </style>
   </body>
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	  <script src="./jquery.serializejson.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="./jquery.serializejson.js"></script>
   <script href="./script.js"></script>
   <script>
     // Example POST method implementation: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
@@ -87,7 +87,7 @@ j<!doctype html>
     }
 
 
- let uri = "https://api.mksybr.com/public_comments";
+    let uri = "https://api.mksybr.com/public_comment";
     let jsonReq = $("#inputForm").serializeJSON();
     submitForm.addEventListener("click", () => {
       postData(uri, jsonReq);
