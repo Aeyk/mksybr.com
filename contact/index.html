@@ -51,7 +51,7 @@
       <!-- {"public_comments":{"name":}}-->
       <div class="main">
 	<h2>drop a msg</h2>
-	<form id="inputForm" name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comment" >
+	<form id="inputForm" name="public_comments" method="post" enctype='text/plain' action="https://api.mksybr.com/public_comments" >
 
 	    <input name="public_comment[name]" type="text" value="" placeholder="Bob Smith" id="nameInput"/>
 	  ​  <textarea name="public_comment[content]" cols="20" id="messageInput"></textarea>
@@ -87,7 +87,7 @@
     }
 
 
-    let uri = "https://api.mksybr.com/public_comment";
+    let uri = "https://api.mksybr.com/public_comments";
     let jsonReq = $("#inputForm").serializeJSON();
     submitForm.addEventListener("click", () => {
       postData(uri, jsonReq);
