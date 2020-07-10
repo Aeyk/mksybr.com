@@ -76,7 +76,9 @@
 	  margin-top: 10px; margin-bottom: 10px; border: 6px solid black;
 	  background: #e1e1e1; padding: 5px;
       }
-      
+      #id1, #id2, #id3 {
+	  display: inline;
+      }
       
 
 } /* Define mobile styles - Mobile First */

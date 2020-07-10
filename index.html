@@ -49,19 +49,65 @@
         </div>
       </nav>
       <div class="jumbotron">
-        <h1 class="display-4"><h1 class="display-4">0</h1><h1 class="display-4">1</h1><h1 class="display-4">1</h1><h1 class="display-4">0</h1> <h1 class="display-4">1</h1><h1 class="display-4">1</h1><h1 class="display-4">0</h1><h1 class="display-4">1</h1>
-	  <h1 class="display-4">0</h1><h1 class="display-4">0</h1><h1 class="display-4">0</h1><h1 class="display-4">0</h1> <h1 class="display-4">0</h1><h1 class="display-4">0</h1><h1 class="display-4">0</h1><h1 class="display-4">1</h1>
-	  <h1 class="display-4">0</h1><h1 class="display-4">0</h1><h1 class="display-4">0</h1><h1 class="display-4">1</h1> <h1 class="display-4">1</h1><h1 class="display-4">1</h1><h1 class="display-4">1</h1><h1 class="display-4">1</h1> </h1>
+        <h1 class="display-4 a">0</h1>
+	<h1 class="display-4 a">1</h1>
+	<h1 class="display-4 a">0</h1>
+	<h1 class="display-4 a">0</h1>
+	<h1 class="display-4 a">0</h1>
+	<h1 class="display-4 a">0</h1>
+	<h1 class="display-4 a">1</h1>
+	<h1 class="display-4 a">1</h1>
+	
+	<h1 class="display-4 b">0</h1>
+	<h1 class="display-4 b">1</h1>
+	<h1 class="display-4 b">1</h1>
+	<h1 class="display-4 b">0</h1>
+	<h1 class="display-4 b">0</h1>
+	<h1 class="display-4 b">0</h1>
+	<h1 class="display-4 b">0</h1>
+	<h1 class="display-4 b">1</h1>
+	
+	<h1 class="display-4 c">0</h1>
+	<h1 class="display-4 c">1</h1>
+	<h1 class="display-4 c">1</h1>
+	<h1 class="display-4 c">0</h1>
+	<h1 class="display-4 c">1</h1>
+	<h1 class="display-4 c">1</h1>
+	<h1 class="display-4 c">1</h1>
+	<h1 class="display-4 c">0</h1>
         <a class="btn btn-outline-primary btn-lg" href="./blog/" role="button">
-	  uhhh can I get a blog</a>
+	  <div id="id1">c</div>an I uh get <div id="id2">a</div> pag<div id="id3">e</div></a>
+	
       </div>
   </body>
 
   <script>
-    for(bit of document.querySelectorAll("h1.display-4")) {
+    let byte1 = "01000011".split('')
+    let byte2 = "01100001".split('')
+    let byte3 = "01100101".split('')
+    
+    for(bit of document.querySelectorAll("h1.display-4.a")) {
       bit.addEventListener("click", (e) => {
-	e.target.textContent = (e.target.textContent === "1") ? 0 : 1;
-	
+	let index1 = [...bit.parentElement.children].indexOf(e.target)
+	byte1[index1] = (byte1[index1] ^ 1).toString()
+	e.target.textContent = byte1[index1]
+	document.querySelector("#id1").innerText = String.fromCharCode(parseInt(byte1.join(''), 2))
+      })
+    }
+    for(bit of document.querySelectorAll("h1.display-4.b")) {
+      bit.addEventListener("click", (e) => {
+	let index2 = ([...bit.parentElement.children].indexOf(e.target) % 8)
+	byte2[index2] = (byte2[index2] ^ 1).toString()
+	e.target.textContent = byte2[index2]
+	document.querySelector("#id2").innerText = String.fromCharCode(parseInt(byte2.join(''), 2))
+      })
+    }
+    for(bit of document.querySelectorAll("h1.display-4.c")) {
+      bit.addEventListener("click", (e) => {
+	let index3 = ([...bit.parentElement.children].indexOf(e.target) % 8)
+	byte3[index3] = (byte3[index3] ^ 1).toString()
+	e.target.textContent = byte3[index3]
+	document.querySelector("#id3").innerText = String.fromCharCode(parseInt(byte3.join(''), 2))
       })
     }
   </script>
