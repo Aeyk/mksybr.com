@@ -76,8 +76,9 @@
 	  margin-top: 10px; margin-bottom: 10px; border: 6px solid black;
 	  background: #e1e1e1; padding: 5px;
       }
-      #id1, #id2, #id3 {
+      h1.display, #id1, #id2, #id3 {
 	  display: inline;
+	  transition: color 1s ease;
       }
       
 
@@ -102,9 +103,11 @@
       .container {
 	  padding: 0 0 0 0;
       }
-      h1.display-4 {
-	display: inline;
-    }
+      h1.display, #id1, #id2, #id3 {
+	  display: inline;
+	  transition: color 1s ease;
+      }
+
 
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
@@ -115,6 +118,10 @@
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
     h1.display-4 {
 	display: inline;
+	
+	transition: color 1s ease-out;
+	  
+	
     }
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
@@ -127,7 +134,10 @@
     }
     h1.display-4 {
 	display: inline;
+	transition: color 1s ease;
+	  
     }
+    
 
 }  
 

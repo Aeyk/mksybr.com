@@ -85,13 +85,20 @@
     let byte1 = "01000011".split('')
     let byte2 = "01100001".split('')
     let byte3 = "01100101".split('')
-    
+    let color = document.querySelector("#id3").style.color;
+    let clicks = 0;
     for(bit of document.querySelectorAll("h1.display-4.a")) {
       bit.addEventListener("click", (e) => {
 	let index1 = [...bit.parentElement.children].indexOf(e.target)
 	byte1[index1] = (byte1[index1] ^ 1).toString()
 	e.target.textContent = byte1[index1]
+	document.querySelector("#id1").style.color = "red";
 	document.querySelector("#id1").innerText = String.fromCharCode(parseInt(byte1.join(''), 2))
+
+	e.target.style.color = "red";
+	setTimeout(() => {e.target.style.color = color;}, 500)
+	setTimeout(() => {document.querySelector("#id1").style.color = color;}, 500)
+	clicks++;
       })
     }
     for(bit of document.querySelectorAll("h1.display-4.b")) {
@@ -100,6 +107,12 @@
 	byte2[index2] = (byte2[index2] ^ 1).toString()
 	e.target.textContent = byte2[index2]
 	document.querySelector("#id2").innerText = String.fromCharCode(parseInt(byte2.join(''), 2))
+	document.querySelector("#id2").style.color = "red";
+	e.target.style.color = "red";
+	setTimeout(() => {document.querySelector("#id2").style.color = color;}, 500)
+	setTimeout(() => {e.target.style.color = color;}, 500)
+	console.log(e.target)
+	clicks++;
       })
     }
     for(bit of document.querySelectorAll("h1.display-4.c")) {
@@ -108,7 +121,14 @@
 	byte3[index3] = (byte3[index3] ^ 1).toString()
 	e.target.textContent = byte3[index3]
 	document.querySelector("#id3").innerText = String.fromCharCode(parseInt(byte3.join(''), 2))
+	document.querySelector("#id3").style.color = "red";
+	e.target.style.color = "red";
+	
+	setTimeout(() => {e.target.style.color = color;}, 500)
+	setTimeout(() => {document.querySelector("#id3").style.color = color;}, 500)
+	clicks++;
       })
+
     }
   </script>
 
