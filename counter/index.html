@@ -56,7 +56,7 @@
   </body>
   <script>
     fetch("https://api.mksybr.com/counter")
-      .then(res => { res.json() })
+      .then(res => { res })
       .then(data => {
          console.log(data);
          document.querySelector("#count").innerText = data;
