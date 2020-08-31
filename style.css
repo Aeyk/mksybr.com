@@ -52,6 +52,7 @@
     }
 
     .jumbotron {
+	padding-bottom: 40vh;
 	text-align: center;
     }
 
@@ -61,26 +62,30 @@
 	
     }
 
-      h1.display-4 {
+    h1.display-4 {
 	display: inline;
+	font-size: 1.9em;
+	letter-spacing: -0.6em;
+	line-height: 2em;
+	margin-bottom: 3em;
     }
 
     .main {
-	  display: flex;
-      }
-      h2 {
-	  width: 100%;
-      }
-      textarea, input, .main {
-	  text-align: center;
-	  margin-top: 10px; margin-bottom: 10px; border: 6px solid black;
-	  background: #e1e1e1; padding: 5px;
-      }
-      h1.display, #id1, #id2, #id3 {
-	  display: inline;
-	  transition: color 1s ease;
-      }
-      
+	display: flex;
+    }
+    h2 {
+	width: 100%;
+    }
+    textarea, input, .main {
+	text-align: center;
+	margin-top: 10px; margin-bottom: 10px; border: 6px solid black;
+	background: #e1e1e1; padding: 5px;
+    }
+    h1.display, #id1, #id2, #id3 {
+	display: inline;
+	transition: color 1s ease;
+    }
+    
 
 } /* Define mobile styles - Mobile First */
 
@@ -88,25 +93,25 @@
     .main {
 	display: flex;
 	flex-flow: wrap;
-      }
-      h2 {
-	  width: 100%;
-	  flex: 1;
-      }
-      textarea, input[type=text], .main {
-	  flex: 1;
-	  width: 100%;
-	  border: 1px solid black;
-	  background: #e1e1e1; padding: 5px;
+    }
+    h2 {
+	width: 100%;
+	flex: 1;
+    }
+    textarea, input[type=text], .main {
+	flex: 1;
+	width: 100%;
+	border: 1px solid black;
+	background: #e1e1e1; padding: 5px;
 
-      }
-      .container {
-	  padding: 0 0 0 0;
-      }
-      h1.display, #id1, #id2, #id3 {
-	  display: inline;
-	  transition: color 1s ease;
-      }
+    }
+    .container {
+	padding: 0 0 0 0;
+    }
+    h1.display, #id1, #id2, #id3 {
+	display: inline;
+	transition: color 1s ease;
+    }
 
 
 
@@ -120,7 +125,7 @@
 	display: inline;
 	
 	transition: color 1s ease-out;
-	  
+	
 	
     }
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
@@ -135,7 +140,7 @@
     h1.display-4 {
 	display: inline;
 	transition: color 1s ease;
-	  
+	
     }
     
 
