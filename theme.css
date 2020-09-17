@@ -1,9 +1,10 @@
 pre.src:before, pre.src:after,pre,
-body{background-color:#2a2e35!important;
+body{
+    background-color:#2a2e35!important;
      color:#e1e1e1!important;
      border: 1px #e1e1e1 solid!important;
      font-family: monospace;
-     /*box-shadow: none!important;*/
+     box-shadow: none!important;
      /* offset-x | offset-y | blur-radius | color */
 }
 .todo{ color: #de8990!important;}
