@@ -1,0 +1,19 @@
+pre.src:before, pre.src:after,pre,
+body{background-color:#2a2e35!important;
+     color:#e1e1e1!important;
+     border: 1px #e1e1e1 solid!important;
+     font-family: monospace;
+     /*box-shadow: none!important;*/
+     /* offset-x | offset-y | blur-radius | color */
+}
+.todo{ color: #de8990!important;}
+.done { color: #94daa9 !important;}
+a:visited{color:#cca8c9!important;}
+a{color:#59b0b2;}
+a:hover{color:#dee7aa;}
+pre {
+    box-shadow: 7px 12px 0px #1a1e20!important;
+    margin-bottom: 10px!important;
+}
+#postamble{
+    display: none!important;}
