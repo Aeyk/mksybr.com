@@ -1,4 +1,6 @@
+.blogpost_list {
 
+}
 
 /*------------------------------------------
   Responsive Grid Media Queries - 1280, 1024, 768, 480
@@ -26,6 +28,17 @@
 
 /* Small screens - MOBILE */
 @media only screen {
+  .navbar-img {
+    display: none;
+    background-: #fff;
+  }
+  a.navbar-brand {
+    background-image: url(./logo.svg);
+    height: 80px;
+    width: 80px;
+    background-repeat: no-repeat;
+  }
+
   span.navbar-toggler-icon:hover {
     background-image: url(./menu-2-hover.svg)!important;
   }
@@ -137,6 +150,16 @@
 	  
 	  
   }
+  .navbar-img {
+    height: 80px;
+    background-: #fff;
+  }
+  a.navbar-brand {
+    background-image: url(./logo.svg);
+    height: 80px;
+    width: 80px;
+    background-repeat: no-repeat;
+  }
 
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
@@ -155,6 +178,16 @@
 
   .navbar-toggler-icon {
     background-image: url(./menu-2.svg)!important;
+  }
+  .navbar-img {
+    height: 80px;
+    background-: #fff;
+  }
+  a.navbar-brand {
+    background-image: url(./logo.svg);
+    height: 80px;
+    width: 80px;
+    background-repeat: no-repeat;
   }
 
 }  
