@@ -1,9 +1,0 @@
-# Set which document to use for 404 Page Not Found
-ErrorDocument 404 /404.html
-
-RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
-
-##### Uncomment to Enable directory indices aka 'inurl:Directory of /'
-# Options -Indexes
