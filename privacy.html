@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="dark.css" rel="stylesheet" />
+    <link href="font.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- bootstrap 4.3 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- import Roboto, Oswald, Source Code Pro Google Font -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./"></a>
+        <img class="navbar-img" alt="" src="./me_at_mksybr.svg"/>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href=".">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./blog/">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  We will not use or sell your data. 
+  </body>
+
+  <script>
+    let byte1 = "01000011".split('')
+    let byte2 = "01100001".split('')
+    let byte3 = "01100101".split('')
+    let color = document.querySelector("#id3").style.color;
+    let clicks = 0;
+    for(bit of document.querySelectorAll("h1.display-4.a")) {
+      bit.addEventListener("click", (e) => {
+	let index1 = [...bit.parentElement.children].indexOf(e.target)
+	byte1[index1] = (byte1[index1] ^ 1).toString()
+	e.target.textContent = byte1[index1]
+	document.querySelector("#id1").style.color = "red";
+	document.querySelector("#id1").innerText = String.fromCharCode(parseInt(byte1.join(''), 2))
+
+	e.target.style.color = "red";
+	setTimeout(() => {e.target.style.color = color;}, 500)
+	setTimeout(() => {document.querySelector("#id1").style.color = color;}, 500)
+	clicks++;
+      })
+    }
+    for(bit of document.querySelectorAll("h1.display-4.b")) {
+      bit.addEventListener("click", (e) => {
+	let index2 = ([...bit.parentElement.children].indexOf(e.target) % 8)
+	byte2[index2] = (byte2[index2] ^ 1).toString()
+	e.target.textContent = byte2[index2]
+	document.querySelector("#id2").innerText = String.fromCharCode(parseInt(byte2.join(''), 2))
+	document.querySelector("#id2").style.color = "red";
+	e.target.style.color = "red";
+	setTimeout(() => {document.querySelector("#id2").style.color = color;}, 500)
+	setTimeout(() => {e.target.style.color = color;}, 500)
+	console.log(e.target)
+	clicks++;
+      })
+    }
+    for(bit of document.querySelectorAll("h1.display-4.c")) {
+      bit.addEventListener("click", (e) => {
+	let index3 = ([...bit.parentElement.children].indexOf(e.target) % 8)
+	byte3[index3] = (byte3[index3] ^ 1).toString()
+	e.target.textContent = byte3[index3]
+	document.querySelector("#id3").innerText = String.fromCharCode(parseInt(byte3.join(''), 2))
+	document.querySelector("#id3").style.color = "red";
+	e.target.style.color = "red";
+
+	setTimeout(() => {e.target.style.color = color;}, 500)
+	setTimeout(() => {document.querySelector("#id3").style.color = color;}, 500)
+	clicks++;
+      })
+
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity></script>
+
+</html>
